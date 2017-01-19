@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<head>
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="scripts/SearchController.js"></script>
+    <link href="StyleSheets/StyleSheet1.css" rel="stylesheet" />
+</head>
+<html>
+<body >
+     <div ng-app="myApp" ng-controller="customersCtrl">
+         <div class="divTxtBox">
+             <span class="headingLabel">Search data from Json using Angular application</span><br /><br />
+             <input type="text" ng-model="enteredValue" ng-change="doSearch()" placeholder="search by name">
+         </div>
+            <br />
+    
+    <div class="divGrid" ng-repeat="x in myData">
+              <div ng-class="x.gender=='F' ? 'divStyleRed' : 'divStyleBlue'" id="divBox">
+                  <span class="headingLabel">{{ x.name }}</span><br /><br />
+                  City : {{ x.city }}<br />
+                  Email : {{ x.email }}
+              </div>
+        <div class="divSpace"></div>
+    </div>
+    </div>
+</body>
+</html>
